@@ -11,14 +11,14 @@ const PageNavbar = () => {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <div className="nav">
+          <nav className="navbar">
             <Navbar.Brand href="/">
               <img src={logo} alt="Logo" className="nav-logo" />
             </Navbar.Brand>
             <NavLink className="nav-link" to="/">
               Click & Collect
             </NavLink>
-          </div>
+          </nav>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -29,12 +29,11 @@ const PageNavbar = () => {
               <NavLink className="nav-link" to="/">
                 Home Page
               </NavLink>
-              <NavLink className="nav-link" to="/cartList">
-                Cart List
-              </NavLink>
-              <NavLink className="nav-link" to="/login">
-                LogIn
-              </NavLink>
+              {ValidationHelper.isLogin() && (
+                <NavLink className="nav-link" to="/cartList">
+                  Cart List
+                </NavLink>
+              )}
             </Nav>
 
             {ValidationHelper.isLogin() ? (
