@@ -5,17 +5,17 @@ import Navbar from "react-bootstrap/Navbar";
 import ValidationHelper from "./../util/ValidationHelper";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/img/logo.png";
-
+import { Link } from "react-router-dom";
 const PageNavbar = () => {
   return (
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <nav className="navbar">
+          <nav className="navbar mx-5">
             <Navbar.Brand href="/">
               <img src={logo} alt="Logo" className="nav-logo" />
             </Navbar.Brand>
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link " to="/">
               Click & Collect
             </NavLink>
           </nav>
@@ -39,7 +39,9 @@ const PageNavbar = () => {
             {ValidationHelper.isLogin() ? (
               <button className="btn btn-danger mx-2"> LogOut </button>
             ) : (
-              <button className="btn btn-danger mx-2"> LogIn </button>
+              <Link to="/login" className="btn btn-danger mx-2">
+                LogIn
+              </Link>
             )}
           </Navbar.Collapse>
         </Container>

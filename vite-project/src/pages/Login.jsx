@@ -1,12 +1,13 @@
-import React from 'react';
-import MasterLayout from './../components/MasterLayout';
+import React from "react";
+import MasterLayout from "./../components/MasterLayout";
+import LogInForm from "./../components/LogInForm";
 
 const Login = () => {
-    return (
-        <MasterLayout>
-           <h1>login page</h1> 
-        </MasterLayout>
-    );
+  return (
+    <MasterLayout>
+      <LogInForm />
+    </MasterLayout>
+  );
 };
 
-export default Login;<h1>login page</h1>
+export default Login;
